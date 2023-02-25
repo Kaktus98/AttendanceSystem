@@ -21,14 +21,14 @@ public class Predmet {
     private String ucebna;
 
     @NonNull
-    private Date datum;
+    private String datum;
 
     @NonNull
     private String cas;
 
     public Predmet() {}
 
-    public Predmet(@NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull Date datum, @NonNull String cas) {
+    public Predmet(@NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull String datum, @NonNull String cas) {
         this.nazov_predmetu = nazov_predmetu;
         this.skupina = skupina;
         this.ucebna = ucebna;
@@ -73,11 +73,11 @@ public class Predmet {
     }
 
     @NonNull
-    public Date getDatum() {
+    public String getDatum() {
         return datum;
     }
 
-    public void setDatum(@NonNull Date datum) {
+    public void setDatum(@NonNull String datum) {
         this.datum = datum;
     }
 
