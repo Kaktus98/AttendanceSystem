@@ -23,7 +23,7 @@ public class DochadzkaRepository {
                 "FROM dochadzka " +
                 "JOIN student ON dochadzka.id_student = student.id_student " +
                 "JOIN predmet ON dochadzka.id_predmet = predmet.id_predmet " +
-                "WHERE student.id_student ="+id_student+" AND predmet.den ="+den+" AND predmet.nazov_predmetu ="+nazov_predmetu+"";
+                "WHERE student.id_student ="+id_student+" AND predmet.den ="+den+" AND predmet.nazov_predmetu ="+nazov_predmetu;
 
         return jdbcTemplate.query(sql, dochadzkaRowMapper);
     }

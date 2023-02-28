@@ -11,7 +11,7 @@ public class PredmetRowMapper implements RowMapper<Predmet> {
     @Override
     public Predmet mapRow(ResultSet rs, int rowNum) throws SQLException {
         Predmet predmet = new Predmet();
-        predmet.setId(rs.getInt("id_predmet"));
+        predmet.setId_predmet(rs.getInt("id_predmet"));
         predmet.setNazov_predmetu(rs.getString("nazov_predmetu"));
         predmet.setSkupina(rs.getString("skupina"));
         predmet.setUcebna(rs.getString("ucebna"));

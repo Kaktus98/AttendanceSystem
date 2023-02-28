@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Student {
 
     @Nullable
-    private Integer id;
+    private Integer id_student;
 
     @NonNull
     private String meno;
@@ -40,12 +40,12 @@ public class Student {
     }
 
     @Nullable
-    public Integer getId() {
-        return id;
+    public Integer getId_student() {
+        return id_student;
     }
 
-    public void setId(@Nullable Integer id) {
-        this.id = id;
+    public void setId_student(@Nullable Integer id_student) {
+        this.id_student = id_student;
     }
 
     @NonNull
@@ -107,11 +107,11 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(id, student.id) && Objects.equals(meno, student.meno) && Objects.equals(priezvisko, student.priezvisko) && Objects.equals(email, student.email) && Objects.equals(id_predmet, student.id_predmet) && Objects.equals(id_odbor, student.id_odbor) && Objects.equals(id_rocnik, student.id_rocnik);
+        return Objects.equals(id_student, student.id_student) && Objects.equals(meno, student.meno) && Objects.equals(priezvisko, student.priezvisko) && Objects.equals(email, student.email) && Objects.equals(id_predmet, student.id_predmet) && Objects.equals(id_odbor, student.id_odbor) && Objects.equals(id_rocnik, student.id_rocnik);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, meno, priezvisko, email, id_predmet, id_odbor, id_rocnik);
+        return Objects.hash(id_student, meno, priezvisko, email, id_predmet, id_odbor, id_rocnik);
     }
 }

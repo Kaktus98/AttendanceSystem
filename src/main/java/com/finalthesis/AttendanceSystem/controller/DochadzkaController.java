@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("overview")
+@RequestMapping("prehlad")
 public class DochadzkaController {
 
     private final DochadzkaService dochadzkaService;

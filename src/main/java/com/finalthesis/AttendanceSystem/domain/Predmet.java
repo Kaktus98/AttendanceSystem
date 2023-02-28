@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Predmet {
 
     @Nullable
-    private Integer id;
+    private Integer id_predmet;
 
     @NonNull
     private String nazov_predmetu;
@@ -36,12 +36,12 @@ public class Predmet {
     }
 
     @Nullable
-    public Integer getId() {
-        return id;
+    public Integer getId_predmet() {
+        return id_predmet;
     }
 
-    public void setId(@Nullable Integer id) {
-        this.id = id;
+    public void setId_predmet(@Nullable Integer id_predmet) {
+        this.id_predmet = id_predmet;
     }
 
     @NonNull
@@ -94,11 +94,11 @@ public class Predmet {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Predmet predmet = (Predmet) o;
-        return Objects.equals(id, predmet.id) && Objects.equals(nazov_predmetu, predmet.nazov_predmetu) && Objects.equals(skupina, predmet.skupina) && Objects.equals(ucebna, predmet.ucebna) && Objects.equals(den, predmet.den) && Objects.equals(cas, predmet.cas);
+        return Objects.equals(id_predmet, predmet.id_predmet) && Objects.equals(nazov_predmetu, predmet.nazov_predmetu) && Objects.equals(skupina, predmet.skupina) && Objects.equals(ucebna, predmet.ucebna) && Objects.equals(den, predmet.den) && Objects.equals(cas, predmet.cas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nazov_predmetu, skupina, ucebna, den, cas);
+        return Objects.hash(id_predmet, nazov_predmetu, skupina, ucebna, den, cas);
     }
 }
