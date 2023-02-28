@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface DochadzkaService {
 
-    List<Dochadzka> getDochadzka(int id_student, String datum,String nazov_predmetu); //poradil peťo, budeme selectovat v repository, id je mapovane na studenta
-    Dochadzka get(int id);
-    Integer add(Dochadzka dochadzka); //spytaj sa peťa
+    List<Dochadzka> getDochadzka(Integer id_student,String den,String nazov_predmetu); //poradil peťo, budeme selectovat v repository, id je mapovane na studenta
+
+    Dochadzka get(Integer id);
+
+    Integer add(Dochadzka dochadzka); //spytaj sa peťa... jj bude to tam
 }

@@ -3,7 +3,6 @@ package com.finalthesis.AttendanceSystem.domain;
 import io.micrometer.common.lang.NonNull;
 import io.micrometer.common.lang.Nullable;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Predmet {
@@ -21,18 +20,18 @@ public class Predmet {
     private String ucebna;
 
     @NonNull
-    private String datum;
+    private String den;
 
     @NonNull
     private String cas;
 
     public Predmet() {}
 
-    public Predmet(@NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull String datum, @NonNull String cas) {
+    public Predmet(@NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull String den, @NonNull String cas) {
         this.nazov_predmetu = nazov_predmetu;
         this.skupina = skupina;
         this.ucebna = ucebna;
-        this.datum = datum;
+        this.den = den;
         this.cas = cas;
     }
 
@@ -73,12 +72,12 @@ public class Predmet {
     }
 
     @NonNull
-    public String getDatum() {
-        return datum;
+    public String getDen() {
+        return den;
     }
 
-    public void setDatum(@NonNull String datum) {
-        this.datum = datum;
+    public void setDen(@NonNull String den) {
+        this.den = den;
     }
 
     @NonNull
@@ -95,11 +94,11 @@ public class Predmet {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Predmet predmet = (Predmet) o;
-        return Objects.equals(id, predmet.id) && Objects.equals(nazov_predmetu, predmet.nazov_predmetu) && Objects.equals(skupina, predmet.skupina) && Objects.equals(ucebna, predmet.ucebna) && Objects.equals(datum, predmet.datum) && Objects.equals(cas, predmet.cas);
+        return Objects.equals(id, predmet.id) && Objects.equals(nazov_predmetu, predmet.nazov_predmetu) && Objects.equals(skupina, predmet.skupina) && Objects.equals(ucebna, predmet.ucebna) && Objects.equals(den, predmet.den) && Objects.equals(cas, predmet.cas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nazov_predmetu, skupina, ucebna, datum, cas);
+        return Objects.hash(id, nazov_predmetu, skupina, ucebna, den, cas);
     }
 }

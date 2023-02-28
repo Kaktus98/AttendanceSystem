@@ -10,7 +10,7 @@ public class UcitelRowMapper implements RowMapper<Ucitel> {
     @Override
     public Ucitel mapRow(ResultSet rs, int rowNum) throws SQLException {
         Ucitel ucitel = new Ucitel();
-        ucitel.setId(rs.getInt("id_ucitel"));
+        ucitel.setId_ucitel(rs.getInt("id_ucitel"));
         ucitel.setTitul(rs.getString("titul"));
         ucitel.setMeno(rs.getString("meno"));
         ucitel.setPriezvisko(rs.getString("priezvisko"));

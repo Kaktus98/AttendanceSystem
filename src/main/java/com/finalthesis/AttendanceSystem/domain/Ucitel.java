@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Ucitel {
 
     @Nullable
-    private Integer id;
+    private Integer id_ucitel;
 
     @NonNull
     private String titul;
@@ -40,12 +40,12 @@ public class Ucitel {
     }
 
     @Nullable
-    public Integer getId() {
-        return id;
+    public Integer getId_ucitel() {
+        return id_ucitel;
     }
 
-    public void setId(@Nullable Integer id) {
-        this.id = id;
+    public void setId_ucitel(@Nullable Integer id_ucitel) {
+        this.id_ucitel = id_ucitel;
     }
 
     @NonNull
@@ -107,11 +107,11 @@ public class Ucitel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ucitel ucitel = (Ucitel) o;
-        return Objects.equals(id, ucitel.id) && Objects.equals(titul, ucitel.titul) && Objects.equals(meno, ucitel.meno) && Objects.equals(priezvisko, ucitel.priezvisko) && Objects.equals(email, ucitel.email) && Objects.equals(id_predmet, ucitel.id_predmet) && Objects.equals(id_katedra, ucitel.id_katedra);
+        return Objects.equals(id_ucitel, ucitel.id_ucitel) && Objects.equals(titul, ucitel.titul) && Objects.equals(meno, ucitel.meno) && Objects.equals(priezvisko, ucitel.priezvisko) && Objects.equals(email, ucitel.email) && Objects.equals(id_predmet, ucitel.id_predmet) && Objects.equals(id_katedra, ucitel.id_katedra);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, titul, meno, priezvisko, email, id_predmet, id_katedra);
+        return Objects.hash(id_ucitel, titul, meno, priezvisko, email, id_predmet, id_katedra);
     }
 }
