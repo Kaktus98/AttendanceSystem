@@ -4,6 +4,7 @@ package com.finalthesis.AttendanceSystem.db.service.impl;
 import com.finalthesis.AttendanceSystem.db.repository.DochadzkaRepository;
 import com.finalthesis.AttendanceSystem.db.service.api.DochadzkaService;
 import com.finalthesis.AttendanceSystem.domain.Dochadzka;
+import com.finalthesis.AttendanceSystem.domain.DochadzkaStudent;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class DochadzkaImpl implements DochadzkaService {
     }
 
     @Override
-    public List<Dochadzka> getDochadzka(Integer id_student, String den, String nazov_predmetu) {
+    public List<DochadzkaStudent> getDochadzka(Integer id_student, String den, String nazov_predmetu) {
         return dochadzkaRepository.getDochadzka(id_student,den,nazov_predmetu);
     }
 

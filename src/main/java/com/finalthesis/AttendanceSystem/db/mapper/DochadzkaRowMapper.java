@@ -1,6 +1,7 @@
 package com.finalthesis.AttendanceSystem.db.mapper;
 
 import com.finalthesis.AttendanceSystem.domain.Dochadzka;
+import com.finalthesis.AttendanceSystem.domain.Predmet;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
