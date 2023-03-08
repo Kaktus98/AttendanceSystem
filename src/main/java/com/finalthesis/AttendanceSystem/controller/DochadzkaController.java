@@ -1,7 +1,6 @@
 package com.finalthesis.AttendanceSystem.controller;
 
 import com.finalthesis.AttendanceSystem.db.service.api.DochadzkaService;
-import com.finalthesis.AttendanceSystem.domain.Dochadzka;
 import com.finalthesis.AttendanceSystem.domain.DochadzkaStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,13 +16,9 @@ public class DochadzkaController {
     @Autowired
     private DochadzkaService dochadzkaService;
 
-//    public DochadzkaController(DochadzkaService dochadzkaService) {
-//        this.dochadzkaService = dochadzkaService;
-//    }
-
     @GetMapping("/{id_student}")
     public ResponseEntity<List<DochadzkaStudent>> getAttendance(@PathVariable("id_student") Integer id_student, @RequestParam String den, @RequestParam String nazov_predmetu) {
-        List<DochadzkaStudent> dochadzkaList = dochadzkaService.getDochadzka(id_student,den,nazov_predmetu);
+        List<DochadzkaStudent> dochadzkaList = dochadzkaService.getDochadzka(id_student, den, nazov_predmetu);
         return new ResponseEntity<>(dochadzkaList, HttpStatus.OK);
     }
 

@@ -1,8 +1,6 @@
 package com.finalthesis.AttendanceSystem.db.repository;
 
-import com.finalthesis.AttendanceSystem.db.mapper.DochadzkaRowMapper;
 import com.finalthesis.AttendanceSystem.db.mapper.DochadzkaStudentRowMapper;
-import com.finalthesis.AttendanceSystem.domain.Dochadzka;
 import com.finalthesis.AttendanceSystem.domain.DochadzkaStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,7 +16,8 @@ public class DochadzkaRepository {
     @Autowired
     private DochadzkaStudentRowMapper dochadzkaStudentRowMapper;
 
-    public DochadzkaRepository() {}
+    public DochadzkaRepository() {
+    }
 
     public List<DochadzkaStudent> getDochadzka(Integer id_student, String den, String nazov_predmetu) {
         final String sql = "SELECT dochadzka.id_dochadzka, student.meno, student.priezvisko, predmet.den, predmet.nazov_predmetu, dochadzka.status, dochadzka.datum " +

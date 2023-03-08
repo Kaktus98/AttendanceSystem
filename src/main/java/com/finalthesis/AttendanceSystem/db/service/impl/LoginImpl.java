@@ -26,11 +26,11 @@ public class LoginImpl implements LoginService {
     }
 
     @Override
-    public Login getStudentByEmail(String email) {
-       Login login = studentRepository.getEmail(email);
-       if(login == null) {
-           login =  ucitelRepository.getEmail(email);
-       }
-           return login;
+    public Login getUserByEmail(String email) {
+        Login login = studentRepository.getEmail(email);
+        if (login == null) {
+            login = ucitelRepository.getEmail(email);
+        }
+        return login;
     }
 }

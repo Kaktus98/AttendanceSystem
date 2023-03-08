@@ -2,7 +2,6 @@ package com.finalthesis.AttendanceSystem.db.service.api;
 
 import com.finalthesis.AttendanceSystem.domain.Dochadzka;
 import com.finalthesis.AttendanceSystem.domain.DochadzkaStudent;
-import io.micrometer.common.lang.Nullable;
 
 import java.util.List;
 
@@ -12,5 +11,5 @@ public interface DochadzkaService {
 
     Dochadzka get(Integer id);
 
-    Integer add(Dochadzka dochadzka); //spytaj sa peťa... jj bude to tam
+    Integer add(Dochadzka dochadzka);
 }
