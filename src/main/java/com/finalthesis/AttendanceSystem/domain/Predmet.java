@@ -25,14 +25,19 @@ public class Predmet {
     @NonNull
     private String cas;
 
+    @NonNull
+    private Integer id_ucitel;
+
     public Predmet() {}
 
-    public Predmet(@NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull String den, @NonNull String cas) {
+    public Predmet(@Nullable Integer id_predmet, @NonNull String nazov_predmetu, @NonNull String skupina, @NonNull String ucebna, @NonNull String den, @NonNull String cas, @NonNull Integer id_ucitel) {
+        this.id_predmet = id_predmet;
         this.nazov_predmetu = nazov_predmetu;
         this.skupina = skupina;
         this.ucebna = ucebna;
         this.den = den;
         this.cas = cas;
+        this.id_ucitel = id_ucitel;
     }
 
     @Nullable
@@ -87,6 +92,15 @@ public class Predmet {
 
     public void setCas(@NonNull String cas) {
         this.cas = cas;
+    }
+
+    @NonNull
+    public Integer getId_ucitel() {
+        return id_ucitel;
+    }
+
+    public void setId_ucitel(@NonNull Integer id_ucitel) {
+        this.id_ucitel = id_ucitel;
     }
 
     @Override

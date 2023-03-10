@@ -17,6 +17,7 @@ public class PredmetRowMapper implements RowMapper<Predmet> {
         predmet.setUcebna(rs.getString("ucebna"));
         predmet.setDen(rs.getString("den"));
         predmet.setCas(rs.getString("cas"));
+        predmet.setId_ucitel(rs.getInt("id_ucitel"));
         return predmet;
     }
 }

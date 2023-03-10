@@ -1,12 +1,14 @@
 package com.finalthesis.AttendanceSystem.db.service.impl;
 
+
+import com.finalthesis.AttendanceSystem.db.service.api.CodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CodeServiceImpl {
+public class CodeServiceImpl implements CodeService {
 
     @Autowired
     private ConcurrentMapCache myCache;
@@ -21,5 +23,24 @@ public class CodeServiceImpl {
             return (String) valueWrapper.get();
         }
         return null;
+    }
+
+
+    @Override
+    public String generate(Integer id_predmet) {
+        myCache.put("uuid kod", id_predmet);
+
+        return "my uuid";
+    }
+
+    @Override
+    public void validate(String uuidCode, Integer id_student) {
+        Cache.ValueWrapper valueWrapper = myCache.get(uuidCode);
+
+        if(valueWrapper != null) {
+            var idPredmet = valueWrapper.get();
+        } else  {
+            throw new RuntimeException("Chyba");
+        }
     }
 }

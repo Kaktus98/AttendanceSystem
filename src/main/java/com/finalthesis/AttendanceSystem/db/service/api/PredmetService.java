@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PredmetService {
 
-    List<Predmet> getPredmety(int id_uctitel, String  den); //id ucitela
+    List<Predmet> getPredmety(int id_ucitel, String  den,String nazov_predmetu);
 
     Predmet get(int id);
 }
