@@ -1,10 +1,7 @@
 package com.finalthesis.AttendanceSystem.config;
 
 
-import com.finalthesis.AttendanceSystem.db.mapper.DochadzkaStudentRowMapper;
-import com.finalthesis.AttendanceSystem.db.mapper.PredmetRowMapper;
-import com.finalthesis.AttendanceSystem.db.mapper.StudentRowMapper;
-import com.finalthesis.AttendanceSystem.db.mapper.UcitelRowMapper;
+import com.finalthesis.AttendanceSystem.db.mapper.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,4 +27,8 @@ public class AttendanceSystemConfig {
 
     @Bean
     public PredmetRowMapper predmetRowMapper() {return new PredmetRowMapper();}
+
+    @Bean
+    public DochadzkaUcitelRowMapper DochadzkaUcitelRowMapper() {return new DochadzkaUcitelRowMapper();}
+
 }

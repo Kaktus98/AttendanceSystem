@@ -22,11 +22,14 @@ public class CodeController {
 
     @PostMapping("/validate")
     public ResponseEntity<Validation> validate(@RequestBody Validation validation) { //ak badRequest tak object type
+        System.out.println(validation.getUuidCode());
+        System.out.println(validation.getId_student());
+
         try {
             codeService.validate(validation.getUuidCode(), validation.getId_student());
             return new ResponseEntity<>( HttpStatus.NO_CONTENT);
         } catch (RuntimeException e) {
-            return (ResponseEntity<Validation>) ResponseEntity.badRequest();
+            return ResponseEntity.badRequest().build();
         }
 
 
