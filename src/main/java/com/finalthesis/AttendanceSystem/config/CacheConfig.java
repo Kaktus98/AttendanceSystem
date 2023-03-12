@@ -17,7 +17,7 @@ public class CacheConfig {
     public CacheManager cacheManager() {
         SimpleCacheManager cacheManager = new SimpleCacheManager();
         cacheManager.setCaches(Arrays.asList(
-                new ConcurrentMapCache("myCache", CacheBuilder.newBuilder().expireAfterWrite(Duration.ofMinutes(10)).build().asMap(), false)));
+                new ConcurrentMapCache("myCache", CacheBuilder.newBuilder().expireAfterWrite(Duration.ofMinutes(15)).build().asMap(), false)));
         return cacheManager;
     }
 
