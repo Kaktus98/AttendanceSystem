@@ -1,13 +1,14 @@
 package com.finalthesis.AttendanceSystem.db.service.api;
 
 import com.finalthesis.AttendanceSystem.domain.Predmet;
+import com.finalthesis.AttendanceSystem.domain.PredmetyUcitel;
 
-import java.util.Date;
 import java.util.List;
 
 public interface PredmetService {
 
-    List<Predmet> getPredmety(int id_ucitel, String  den,String nazov_predmetu);
+    List<Predmet> getPredmety(int id_ucitel, String den, String nazov_predmetu);
 
-    Predmet get(int id);
+    List<PredmetyUcitel> getPredmetyUcitel(Integer id_ucitel);
+
 }

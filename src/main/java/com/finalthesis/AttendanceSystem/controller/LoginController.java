@@ -2,14 +2,11 @@ package com.finalthesis.AttendanceSystem.controller;
 
 import com.finalthesis.AttendanceSystem.db.service.api.LoginService;
 import com.finalthesis.AttendanceSystem.domain.Login;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/login")
 public class LoginController {
 
     private final LoginService loginService;
@@ -18,7 +15,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<Login> getUserLogin(@RequestBody String email) {
         Login login = loginService.getUserByEmail(email);
         if (login != null) {
@@ -27,5 +24,7 @@ public class LoginController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 
 }

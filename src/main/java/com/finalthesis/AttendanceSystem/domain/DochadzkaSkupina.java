@@ -1,40 +1,32 @@
 package com.finalthesis.AttendanceSystem.domain;
 
 import io.micrometer.common.lang.NonNull;
-import org.springframework.lang.Nullable;
 
-public class DochadzkaUcitel {
+public class DochadzkaSkupina {
 
     @NonNull
-    private Integer id_dochadzka;
-
+    private Integer id_predmet;
     @NonNull
     private Integer id_student;
-
     @NonNull
     private String meno;
-
     @NonNull
     private String priezvisko;
 
-    @Nullable
-    private Boolean status;
-
-    public DochadzkaUcitel(@NonNull Integer id_dochadzka, @NonNull Integer id_student, @NonNull String meno, @NonNull String priezvisko, @Nullable Boolean status) {
-        this.id_dochadzka = id_dochadzka;
+    public DochadzkaSkupina(@NonNull Integer id_predmet, @NonNull Integer id_student, @NonNull String meno, @NonNull String priezvisko) {
+        this.id_predmet = id_predmet;
         this.id_student = id_student;
         this.meno = meno;
         this.priezvisko = priezvisko;
-        this.status = status;
     }
 
     @NonNull
-    public Integer getId_dochadzka() {
-        return id_dochadzka;
+    public Integer getId_predmet() {
+        return id_predmet;
     }
 
-    public void setId_dochadzka(@NonNull Integer id_dochadzka) {
-        this.id_dochadzka = id_dochadzka;
+    public void setId_predmet(@NonNull Integer id_predmet) {
+        this.id_predmet = id_predmet;
     }
 
     @NonNull
@@ -62,14 +54,5 @@ public class DochadzkaUcitel {
 
     public void setPriezvisko(@NonNull String priezvisko) {
         this.priezvisko = priezvisko;
-    }
-
-    @Nullable
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(@Nullable Boolean status) {
-        this.status = status;
     }
 }

@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface LoginService {
 
-    List<Student> getStudentov();
 
     Login getUserByEmail(String email); //prvy krok potrebny na prihlasenie
     //Post reaquest v controlleri a bude to Login end point

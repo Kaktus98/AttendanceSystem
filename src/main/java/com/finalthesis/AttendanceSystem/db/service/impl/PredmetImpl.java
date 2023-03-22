@@ -4,6 +4,7 @@ package com.finalthesis.AttendanceSystem.db.service.impl;
 import com.finalthesis.AttendanceSystem.db.repository.PredmetRepository;
 import com.finalthesis.AttendanceSystem.db.service.api.PredmetService;
 import com.finalthesis.AttendanceSystem.domain.Predmet;
+import com.finalthesis.AttendanceSystem.domain.PredmetyUcitel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,12 +20,13 @@ public class PredmetImpl implements PredmetService {
 
     @Override
     public List<Predmet> getPredmety(int id_ucitel, String den, String nazov_predmetu) {
-        return predmetRepository.getPredmety(id_ucitel,den,nazov_predmetu);
+        return predmetRepository.getPredmety(id_ucitel, den, nazov_predmetu);
     }
-
 
     @Override
-    public Predmet get(int id) {
-        return null;
+    public List<PredmetyUcitel> getPredmetyUcitel(Integer id_ucitel) {
+        return predmetRepository.getPredmetyUcitel(id_ucitel);
     }
+
+
 }

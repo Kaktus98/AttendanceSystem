@@ -29,6 +29,11 @@ public class AttendanceSystemConfig {
     public PredmetRowMapper predmetRowMapper() {return new PredmetRowMapper();}
 
     @Bean
-    public DochadzkaUcitelRowMapper DochadzkaUcitelRowMapper() {return new DochadzkaUcitelRowMapper();}
+    public DochadzkaUcitelRowMapper dochadzkaUcitelRowMapper() {return new DochadzkaUcitelRowMapper();}
+
+    @Bean
+    public DochadzkaSkupinaRowMapper dochadzkaSkupinaRowMapper() {return new DochadzkaSkupinaRowMapper();}
+    @Bean
+    public PredmetyUcitelRowMapper predmetyUcitelRowMapper() {return  new PredmetyUcitelRowMapper();}
 
 }

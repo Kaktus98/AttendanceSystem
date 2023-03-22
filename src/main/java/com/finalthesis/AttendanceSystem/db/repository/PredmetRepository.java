@@ -1,8 +1,9 @@
 package com.finalthesis.AttendanceSystem.db.repository;
 
-import com.finalthesis.AttendanceSystem.db.mapper.DochadzkaStudentRowMapper;
 import com.finalthesis.AttendanceSystem.db.mapper.PredmetRowMapper;
+import com.finalthesis.AttendanceSystem.db.mapper.PredmetyUcitelRowMapper;
 import com.finalthesis.AttendanceSystem.domain.Predmet;
+import com.finalthesis.AttendanceSystem.domain.PredmetyUcitel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -17,9 +18,12 @@ public class PredmetRepository {
     @Autowired
     private PredmetRowMapper predmetRowMapper;
 
+    @Autowired
+    private PredmetyUcitelRowMapper predmetyUcitelRowMapper;
+
 
     public List<Predmet> getPredmety(Integer id_ucitel, String den, String nazov_predmetu) {
-        if( nazov_predmetu == null) {
+        if (nazov_predmetu == null) {
             final String sql = "SELECT * " +
                     "FROM predmet " +
                     "WHERE predmet.id_ucitel = ? AND predmet.den=? ";
@@ -32,5 +36,12 @@ public class PredmetRepository {
 
             return jdbcTemplate.query(sql, predmetRowMapper, id_ucitel, den, nazov_predmetu);
         }
+    }
+
+
+    public List<PredmetyUcitel> getPredmetyUcitel(Integer id_ucitel) {
+        final String sql = "SELECT predmet.nazov_predmetu FROM predmet WHERE predmet.id_ucitel = ?";
+
+        return jdbcTemplate.query(sql, predmetyUcitelRowMapper, id_ucitel);
     }
 }

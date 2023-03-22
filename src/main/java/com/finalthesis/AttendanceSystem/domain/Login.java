@@ -1,7 +1,6 @@
 package com.finalthesis.AttendanceSystem.domain;
 
 import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
 
 public class Login {
     @NonNull

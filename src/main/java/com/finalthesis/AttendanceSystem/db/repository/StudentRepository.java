@@ -19,7 +19,7 @@ public class StudentRepository {
     public StudentRepository() {}
 
     public Login getEmail(String email) {
-        final String sql = "select * from student where student.email ="+email;
+        final String sql = "select * from student where student.email=" +email;
         try {
             return jdbcTemplate.queryForObject(sql, studentRowMapper);
         } catch (EmptyResultDataAccessException e) {

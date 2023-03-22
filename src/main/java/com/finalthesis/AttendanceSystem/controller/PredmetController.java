@@ -1,8 +1,8 @@
 package com.finalthesis.AttendanceSystem.controller;
 
 import com.finalthesis.AttendanceSystem.db.service.api.PredmetService;
-import com.finalthesis.AttendanceSystem.domain.DochadzkaStudent;
 import com.finalthesis.AttendanceSystem.domain.Predmet;
+import com.finalthesis.AttendanceSystem.domain.PredmetyUcitel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +18,17 @@ public class PredmetController {
     private PredmetService predmetService;
 
 
+
     @GetMapping("/{id_ucitel}")
-    public ResponseEntity<List<Predmet>> getAttendance(@PathVariable("id_ucitel") Integer id_ucitel, @RequestParam String den, @RequestParam(required = false) String nazov_predmetu ) {
+    public ResponseEntity<List<Predmet>> getAttendance(@PathVariable("id_ucitel") Integer id_ucitel, @RequestParam String den, @RequestParam(required = false) String nazov_predmetu) {
         List<Predmet> predmetList = predmetService.getPredmety(id_ucitel, den, nazov_predmetu);
         return new ResponseEntity<>(predmetList, HttpStatus.OK);
+    }
+
+    @GetMapping("/predmetyUcitel/{id_ucitel}")
+    public ResponseEntity<List<PredmetyUcitel>> getPredmetUcitel(@PathVariable("id_ucitel") Integer id_ucitel) {
+        List<PredmetyUcitel> predmetyUcitelList = predmetService.getPredmetyUcitel(id_ucitel);
+        return new ResponseEntity<>(predmetyUcitelList, HttpStatus.OK);
     }
 
 

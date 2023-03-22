@@ -13,6 +13,7 @@ public class DochadzkaUcitelRowMapper implements RowMapper<DochadzkaUcitel> {
     public DochadzkaUcitel mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new DochadzkaUcitel(
                 rs.getInt("id_dochadzka"),
+                rs.getInt("id_student"),
                 rs.getString("meno"),
                 rs.getString("priezvisko"),
                 rs.getBoolean("status")
