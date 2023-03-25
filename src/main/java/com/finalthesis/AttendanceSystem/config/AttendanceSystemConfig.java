@@ -36,4 +36,7 @@ public class AttendanceSystemConfig {
     @Bean
     public PredmetyUcitelRowMapper predmetyUcitelRowMapper() {return  new PredmetyUcitelRowMapper();}
 
+    @Bean
+    public PredmetyStudentRowMapper predmetyStudentRowMapper() {return  new PredmetyStudentRowMapper();}
+
 }
